@@ -1,0 +1,280 @@
+/* ==========================================================================
+   KEC HOSTELS - Modals & Dialogs Stylesheet
+   Includes: Login Required Popup, Auth (Sign In / Register), Forms, Actions
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(7, 25, 47, 0.65);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s;
+  padding: 1.25rem;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(15px);
+  transition: transform 0.25s ease;
+  border: 1px solid var(--border-light);
+}
+
+.modal-backdrop.active .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal-dialog-wide {
+  max-width: 680px;
+}
+
+.modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  color: var(--color-primary-navy);
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  color: var(--color-status-danger);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   1. LOGIN REQUIRED MODAL
+   ========================================================================== */
+
+.login-required-box {
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.login-req-icon {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-kec-green-tint);
+  color: var(--color-kec-green-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.25rem auto;
+}
+
+.login-required-box h3 {
+  font-size: 1.35rem;
+  color: var(--color-primary-navy);
+  margin-bottom: 0.5rem;
+}
+
+.login-required-box p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 400px;
+  margin: 0 auto 1.75rem auto;
+}
+
+.login-req-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   2. AUTH MODAL (Tabs, Roles, Quick Login)
+   ========================================================================== */
+
+.auth-nav-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border-light);
+  margin-bottom: 1.25rem;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.auth-tab-btn.active {
+  color: var(--color-primary-navy);
+  border-bottom-color: var(--color-kec-green);
+}
+
+/* Role Selector Buttons */
+.role-selector-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.role-selector-wrap label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.role-buttons-group {
+  display: flex;
+  gap: 0.4rem;
+  background-color: var(--bg-alt);
+  padding: 0.3rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.role-btn {
+  flex: 1;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.role-btn.active {
+  background-color: #ffffff;
+  color: var(--color-primary-navy);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Auth Error Alert Box */
+.auth-error-alert {
+  background-color: var(--bg-status-danger);
+  color: var(--color-status-danger);
+  border: 1px solid #fca5a5;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Quick Demo Login Bar */
+.demo-accounts-bar {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.demo-title {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.demo-pills-row {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.demo-pill {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-primary-navy);
+  transition: var(--transition);
+}
+
+.demo-pill:hover {
+  background-color: var(--color-kec-green-tint);
+  border-color: var(--color-kec-green);
+  color: var(--color-kec-green-dark);
+}
+
+/* Form Two Column Inside Modals */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 580px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

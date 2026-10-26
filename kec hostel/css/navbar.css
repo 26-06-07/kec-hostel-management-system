@@ -1,0 +1,266 @@
+/* ==========================================================================
+   KEC HOSTELS - Navigation Bar & Institutional Header
+   ========================================================================== */
+
+/* Top Thin Notice Bar */
+.top-notice-bar {
+  background-color: var(--color-primary-navy);
+  color: #ffffff;
+  padding: 0.35rem 0;
+  font-size: 0.78rem;
+  border-bottom: 2px solid var(--color-kec-green);
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-contact-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.top-contact-links span, .top-contact-links a {
+  color: #e2e8f0;
+}
+
+.top-quick-tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.quick-tag-item {
+  color: var(--color-kec-green-light);
+  font-weight: 600;
+}
+
+/* Main Institutional Header */
+.main-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+/* Brand Identity */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.header-emblem {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary-navy) 0%, var(--color-navy-light) 100%);
+  color: var(--color-kec-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(11, 37, 69, 0.15);
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  height: 54px;
+  max-width: 140px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-college-name {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--color-primary-navy);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.brand-college-name span {
+  color: var(--color-kec-green-dark);
+}
+
+.brand-system-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Header Right Meta Status Badge */
+.header-right-meta {
+  display: flex;
+  align-items: center;
+}
+
+.header-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary-navy);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-status-success);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* Nav Menu Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--color-primary-navy);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.4rem 0.2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-kec-green);
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-kec-green-dark);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Auth Actions */
+.nav-auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background-color: var(--color-navy-subtle);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-primary-navy);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.user-pill-btn:hover {
+  background-color: #dbe4ee;
+  border-color: var(--color-accent-blue);
+}
+
+.user-avatar-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-kec-green);
+  border-radius: 50%;
+}
+
+.portal-tag {
+  color: var(--color-accent-blue);
+  font-size: 0.76rem;
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-primary-navy);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 980px) {
+  .top-notice-bar {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 68px;
+    left: -100%;
+    width: 260px;
+    height: calc(100vh - 68px);
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-lg);
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
